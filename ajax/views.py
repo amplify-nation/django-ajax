@@ -27,7 +27,7 @@ def endpoint_loader(request, application, model, **kwargs):
 
     try:
         module = import_module('%s.endpoints' % application)
-    except ImportError, e:
+    except ImportError as e:
         if settings.DEBUG:
             raise e
         else:
