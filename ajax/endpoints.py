@@ -173,7 +173,7 @@ class ModelEndpoint(object):
         if raw_tags:
             try:
                 tags = [t for t in parse_tags(raw_tags) if len(t)]
-            except Exception, e:
+            except Exception as e:
                 pass
 
         return tags
