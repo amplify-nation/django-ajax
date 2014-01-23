@@ -116,7 +116,7 @@ class ModelEndpoint(object):
             record.full_clean()
             record.save()
             return record
-        except ValidationError, e:
+        except ValidationError as e:
             raise AJAXError(400, _("Could not save model."),
                 errors=e.message_dict)
 
