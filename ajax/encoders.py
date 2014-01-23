@@ -58,7 +58,7 @@ class DefaultEncoder(object):
                     new_value = self._encode_value(f, val)
 
                 ret[smart_str(field)] = new_value
-            except FieldDoesNotExist, e:
+            except FieldDoesNotExist as e:
                 pass  # Assume extra fields are already safe.
                   
         if expand and hasattr(record, 'tags') and \
