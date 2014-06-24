@@ -31,8 +31,8 @@ class BaseTest(TestCase):
         """
         response = self.client.post(uri, data)
         if debug:
-            print response.__class__.__name__
-            print response
+            print(response.__class__.__name__)
+            print (response)
 
         self.assertEquals(status_code, response.status_code)
 

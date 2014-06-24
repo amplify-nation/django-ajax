@@ -1,4 +1,5 @@
-from django.utils import simplejson as json
+import json
+
 from django.utils.encoding import smart_str
 from django.http import HttpResponse, HttpResponseNotFound, \
     HttpResponseForbidden, HttpResponseNotAllowed, HttpResponseServerError, \
