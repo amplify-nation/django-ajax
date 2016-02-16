@@ -1,5 +1,5 @@
 from django.utils.translation import ugettext as _
-from django.utils.log import getLogger
+from logging import getLogger
 from django.http import Http404
 from django.conf import settings
 from decorator import decorator

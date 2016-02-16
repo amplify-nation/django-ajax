@@ -3,8 +3,8 @@ import json
 from django.conf import settings
 from django.http import HttpResponse
 from django.utils.translation import ugettext as _
-from django.utils.importlib import import_module
-from django.utils.log import getLogger
+from django.utils.module_loading import import_string
+from logging import getLogger
 from django.core.serializers.json import DjangoJSONEncoder
 from ajax.exceptions import AJAXError, NotRegistered
 from ajax.decorators import json_response
@@ -27,7 +27,7 @@ def endpoint_loader(request, application, model, **kwargs):
         raise AJAXError(400, _('Invalid HTTP method used.'))
 
     try:
-        module = import_module('%s.endpoints' % application)
+        module = import_string('%s.endpoints' % application)
     except ImportError as e:
         if settings.DEBUG:
             raise e

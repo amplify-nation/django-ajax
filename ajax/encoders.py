@@ -4,7 +4,6 @@ from django.db.models.fields import FieldDoesNotExist
 from django.db import models
 from django.conf import settings
 from django.utils.html import escape
-from django.db.models.query import QuerySet
 from django.utils.encoding import smart_str
 import collections
 
